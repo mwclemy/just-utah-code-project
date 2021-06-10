@@ -1,7 +1,54 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin: 72px auto;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.App h2 {
+  width: 400px;
+}
+.formGroup {
+  margin: 20px 0;
 }
 
+.formGroup input {
+  padding: .8em;
+  width: 400px;
+  box-sizing: border-box;
+}
+.formGroup label {
+  display: block;
+}
+#emailConsent {
+  width: 30px
+}
+#checkboxLabel {
+  display: inline;
+}
+
+.error {
+  color: red;
+}
+.successMessage {
+  color: green;
+}
+
+.submitButton {
+  color: white;
+  background-color:black;
+  border: 1.5px solid black;
+  cursor: pointer;
+  width: 100px !important;
+  float: right;
+  margin: 20px 10px;
+  
+}
+.submitButton:focus {
+  outline: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

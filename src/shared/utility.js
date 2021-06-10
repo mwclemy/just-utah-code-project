@@ -21,7 +21,6 @@ export const validate = (values) => {
         errors.birthDate = 'BirthDate must be a valid date'
     }
 
-    console.log(values);
     // email consent validations
     if (!values.emailConsent) {
         errors.emailConsent = 'You must agree to be contacted via email.'
