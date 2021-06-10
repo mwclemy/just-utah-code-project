@@ -55,6 +55,7 @@ function App() {
     }
   }
 
+  // This gets called each time the errors object changes
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       contact();
