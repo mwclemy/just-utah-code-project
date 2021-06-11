@@ -75,7 +75,7 @@ function App() {
   };
 
   // clear values
-  const clearValues = () => {
+  const clearForm = () => {
     setContactForm({
       name: {
         value: '',
@@ -132,7 +132,7 @@ function App() {
       setSuccessMessage("Thanks for contacting us! We'll get back to you shortly.")
       setLoading(false)
       // Clear the form
-      clearValues();
+      clearForm();
     } catch (error) {
       console.log(error);
 
@@ -179,7 +179,7 @@ function App() {
         </div>
         <div className="formGroup">
           <input className={`button ${formIsValid && 'submitButton'}`} type="submit" disabled={!formIsValid} />
-          <input className="button submitButton" type="button" value="Clear" onClick={clearValues} />
+          <input className="button submitButton" type="button" value="Clear" onClick={clearForm} />
         </div>
       </form>
     </div>
