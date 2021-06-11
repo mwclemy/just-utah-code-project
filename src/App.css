@@ -36,18 +36,29 @@
   color: green;
 }
 
+.button {
+  width: 100px !important;
+  margin: 20px 10px;
+  float: right;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
 .submitButton {
   color: white;
   background-color:black;
   border: 1.5px solid black;
-  cursor: pointer;
-  width: 100px !important;
-  float: right;
-  margin: 20px 10px;
-  
 }
 .submitButton:focus {
   outline: none;
+}
+
+.invalid {
+  border: solid 1px red;
+  background-color: #fda49a;
 }
 .App-logo {
   height: 40vmin;

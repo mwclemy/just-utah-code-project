@@ -1,31 +1,32 @@
-
-export const validate = (values) => {
-    let errors = {};
-    // Name validations
-    if (!values.name) {
-        errors.name = 'Name can not be blank.'
+// utility function to update an object 
+export const updatedObject = (oldObject, updatedObjectElements) => {
+    return {
+        ...oldObject,
+        ...updatedObjectElements
     }
 
-    //Email validations
-    if (!values.email) {
-        errors.email = 'Email can not be blank.';
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-        errors.email = 'Email must be a valid email address.';
+}
+
+// checks the validity of a value against a set of rules
+export const checkValidity = (value, rules) => {
+    let valid = true;
+    if (rules.required) {
+        valid = value.trim() !== '' && valid
+    }
+    if (rules.validEmail) {
+        valid = /\S+@\S+\.\S+/.test(value) && valid
     }
 
-    // Birthdate validations
-    if (!values.birthDate) {
-        errors.birthDate = 'BirthDate can not be blank.'
-    }
-    else if (isNaN(Date.parse(values.birthDate))) {
-        errors.birthDate = 'BirthDate must be a valid date'
+    if (rules.validDate) {
+        valid = !isNaN(Date.parse(value)) && valid
     }
 
-    // email consent validations
-    if (!values.emailConsent) {
-        errors.emailConsent = 'You must agree to be contacted via email.'
+    if (rules.emailConsent) {
+        valid = value && valid
     }
-    return errors;
-};
+
+    return valid;
+
+}
 
 
